@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial Dashboard | Acme Corp</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/luxon@3.0.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.2.0"></script>
+  <link rel="icon" href="assets/favicon.ico">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+      <div class="logo">
+        <img src="assets/logo.svg" alt="Acme Corp Logo">
+        <span>Acme Corp</span>
+      </div>
+      <ul class="nav-links">
+        <li class="active"><a href="#"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+        <li><a href="#"><i class="fas fa-wallet"></i> Accounts</a></li>
+        <li><a href="#"><i class="fas fa-exchange-alt"></i> Transactions</a></li>
+        <li><a href="#"><i class="fas fa-chart-pie"></i> Budget</a></li>
+        <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+      </ul>
+      <div class="user-profile">
+        <img src="https://i.pravatar.cc/40" alt="User">
+        <div class="user-info">
+          <span class="name">John Doe</span>
+          <span class="role">Finance Manager</span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="header">
+        <h1>Financial Dashboard</h1>
+        <div class="header-actions">
+          <div class="date-picker">
+            <i class="fas fa-calendar-alt"></i>
+            <span>Last 30 Days</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <button class="btn btn-primary">
+            <i class="fas fa-download"></i> Export Report
+          </button>
+        </div>
+      </header>
+
+      <!-- Key Metrics -->
+      <section class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-info">
+            <span class="metric-label">Total Revenue</span>
+            <span class="metric-value">$124,568</span>
+            <span class="metric-change positive"><i class="fas fa-arrow-up"></i> 12.5%</span>
+          </div>
+          <i class="fas fa-dollar-sign metric-icon"></i>
+        </div>
+        
+        <div class="metric-card">
+          <div class="metric-info">
+            <span class="metric-label">Total Expenses</span>
+            <span class="metric-value">$78,342</span>
+            <span class="metric-change negative"><i class="fas fa-arrow-down"></i> 3.2%</span>
+          </div>
+          <i class="fas fa-receipt metric-icon"></i>
+        </div>
+        
+        <div class="metric-card">
+          <div class="metric-info">
+            <span class="metric-label">Net Profit</span>
+            <span class="metric-value">$46,226</span>
+            <span class="metric-change positive"><i class="fas fa-arrow-up"></i> 8.7%</span>
+          </div>
+          <i class="fas fa-chart-line metric-icon"></i>
+        </div>
+        
+        <div class="metric-card">
+          <div class="metric-info">
+            <span class="metric-label">Cash Flow</span>
+            <span class="metric-value">$32,891</span>
+            <span class="metric-change positive"><i class="fas fa-arrow-up"></i> 5.4%</span>
+          </div>
+          <i class="fas fa-money-bill-wave metric-icon"></i>
+        </div>
+      </section>
+
+      <!-- Charts Section -->
+      <section class="charts-section">
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3>Revenue vs Expenses</h3>
+            <select class="chart-filter">
+              <option>Last 30 Days</option>
+              <option>Last Quarter</option>
+              <option>Last Year</option>
+            </select>
+          </div>
+          <div class="chart-container">
+            <canvas id="revenueExpensesChart"></canvas>
+          </div>
+        </div>
+        
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3>Expense Breakdown</h3>
+            <select class="chart-filter">
+              <option>By Category</option>
+              <option>By Department</option>
+            </select>
+          </div>
+          <div class="chart-container">
+            <canvas id="expenseBreakdownChart"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recent Transactions -->
+      <section class="transactions-section">
+        <div class="section-header">
+          <h3>Recent Transactions</h3>
+          <a href="#" class="view-all">View All <i class="fas fa-chevron-right"></i></a>
+        </div>
+        <div class="transactions-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Amount</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="transactions-body">
+              <!-- Filled by JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+cat > financial-dashboard/public/assets/logo.svg << 'EOL'
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" rx="20" fill="#4361ee"/>
+  <path d="M80 60L50 140H30L60 60H80ZM120 60L150 140H170L140 60H120ZM100 60L70 140H90L120 60H100Z" fill="white"/>
+  <circle cx="100" cy="100" r="30" fill="#f72585"/>
+  <path d="M100 80L115 120H85L100 80Z" fill="white"/>
+</svg>
+EOL
